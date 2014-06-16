@@ -33,6 +33,7 @@ For example:
                  ];
     }
 
+Make sure to visit the [wiki][1] for more information, detailed help and descriptions!
 How easy is that?! You can view `SKListControllerProtocol.h` to see all the amazing things you can do with SettingsKit.
 
 SettingsKit includes a THEOS NIC template, so it's super easy to build & create preference bundles with it.  
@@ -46,4 +47,10 @@ Building:
  
 Local installation is important too - view or run the file "install" to see what it does. It installs the SettingsKit.framework to Theos (imporant for the NIC and other projects using SettingsKit) and installs the headers. You may need to run it as root (using `sudo ./install` or `su root -c ./install`)
 
+----------------------------------------------------------------
+
 License under the BSD license. Do as you wish.
+
+----------------------------------------------------------------
+
+  [1] - https://github.com/mlnlover11/SettingsKit/wiki
