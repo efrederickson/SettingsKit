@@ -33,7 +33,7 @@ For example:
                  ];
     }
 
-Make sure to visit the [wiki](1) for more information, detailed help and descriptions!
+Make sure to visit the [wiki](https://github.com/mlnlover11/SettingsKit/wiki) for more information, detailed help and descriptions!
 How easy is that?! You can view `SKListControllerProtocol.h` to see all the amazing things you can do with SettingsKit.
 
 SettingsKit includes a THEOS NIC template, so it's super easy to build & create preference bundles with it.  
@@ -52,5 +52,3 @@ Local installation is important too - view or run the file "install" to see what
 License under the BSD license. Do as you wish.
 
 ----------------------------------------------------------------
-
-  [1] - https://github.com/mlnlover11/SettingsKit/wiki
