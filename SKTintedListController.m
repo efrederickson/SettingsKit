@@ -255,6 +255,14 @@
 }
 
 -(BOOL) showHeartImage { return YES; }
--(BOOL) heartImageColor { if ([self respondsToSelector:@selector(tintColor)]) return self.tintColor; else return SYSTEM_TINT; }
+-(UIColor*) heartImageColor
+{
+    if ([self respondsToSelector:@selector(navigationTintColor)])
+        return self.navigationTintColor;
+    else if ([self respondsToSelector:@selector(tintColor)])
+        return self.tintColor;
+    else
+        return SYSTEM_TINT;
+}
 
 @end
