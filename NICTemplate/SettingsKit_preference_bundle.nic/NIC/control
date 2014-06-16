@@ -1,0 +1,2 @@
+name "iphone/SettingsKit_preference_bundle"
+constrain file "control" to package

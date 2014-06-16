@@ -1,0 +1,10 @@
+Package: com.efrederickson.settingskit
+Name: SettingsKit
+Depends: 
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Common utilities for Preferences.app
+Maintainer: Elijah Frederickson
+Author: Elijah Frederickson
+Section: System
+Tag: role::developer

@@ -1,0 +1,2 @@
+cd SettingsKit_preference_bundle.nic
+tar -cvf $THEOS/templates/iphone/SettingsKit_preference_bundle.nic.tar *

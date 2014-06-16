@@ -1,0 +1,9 @@
+*.deb
+_/
+obj/
+.theos/
+.DS_Store
+[Tt]odo
+build/
+theos/
+debs/

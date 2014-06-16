@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = @@PROJECTNAME@@;
+	cell = PSLinkCell;
+	detail = @@PROJECTNAME@@ListController;
+	icon = @@PROJECTNAME@@.png;
+	isController = 1;
+	label = @@PROJECTNAME@@;
+    };
+}

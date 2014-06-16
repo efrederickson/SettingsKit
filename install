@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cp -r .theos/obj/SettingsKit.framework $THEOS/frameworks
+
+cp *.h $THEOS/include/SettingsKit/
+
