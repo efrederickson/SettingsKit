@@ -4,7 +4,7 @@ SettingsKit is a framework with the sole goal of simplifying creating a preferen
 You can create a header in 1 line of code, and with another line add a subText to the header!  
 Automatically localizable, you don't have to worry about localizations anymore!  
 Want a tint? There are MANY available options for adding and modifying tint!  
-Publicity? Thats covered too! Simply enable the showHeartImage, change the shareMessage, and add a heart.png to your Resources! (Note: uses Twitter for sharing)   
+Publicity? Thats covered too! Simply enable the showHeartImage, change the shareMessage, change the heart image color! (Note: uses Twitter for sharing)   
 
 Even better, you don't have to hassle with preference bundle plist files anymore! You can create your entire preference pane with Objective-C code!  
 Using the Objective-C inline Array and Dictionary features, the entire plist can be simplified.  
