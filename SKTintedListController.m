@@ -255,6 +255,6 @@
 }
 
 -(BOOL) showHeartImage { return YES; }
--(BOOL) heartImageColor { return SYSTEM_TINT; }
+-(BOOL) heartImageColor { if ([self respondsToSelector:@selector(tintColor)]) return self.tintColor; else return SYSTEM_TINT; }
 
 @end
