@@ -171,7 +171,7 @@
         if ([self respondsToSelector:@selector(tintColor)])
             label.textColor = self.tintColor;
         if ([self respondsToSelector:@selector(headerColor)])
-            label.text = self.headerColor;
+            label.textColor = self.headerColor;
         
         label.textAlignment = NSTextAlignmentCenter;
         
@@ -189,7 +189,7 @@
             if ([self respondsToSelector:@selector(tintColor)])
                 subText.textColor = self.tintColor;
             if ([self respondsToSelector:@selector(headerColor)])
-                subText.text = self.headerColor;
+                subText.textColor = self.headerColor;
             
             subText.textAlignment = NSTextAlignmentCenter;
             
