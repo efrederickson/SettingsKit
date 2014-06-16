@@ -33,7 +33,7 @@ For example:
                  ];
     }
 
-Make sure to visit the [wiki][1] for more information, detailed help and descriptions!
+Make sure to visit the [wiki](1) for more information, detailed help and descriptions!
 How easy is that?! You can view `SKListControllerProtocol.h` to see all the amazing things you can do with SettingsKit.
 
 SettingsKit includes a THEOS NIC template, so it's super easy to build & create preference bundles with it.  
