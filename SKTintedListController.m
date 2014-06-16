@@ -170,6 +170,8 @@
         label.backgroundColor = [UIColor clearColor];
         if ([self respondsToSelector:@selector(tintColor)])
             label.textColor = self.tintColor;
+        if ([self respondsToSelector:@selector(headerColor)])
+            label.text = self.headerColor;
         
         label.textAlignment = NSTextAlignmentCenter;
         
@@ -186,6 +188,8 @@
             subText.backgroundColor = [UIColor clearColor];
             if ([self respondsToSelector:@selector(tintColor)])
                 subText.textColor = self.tintColor;
+            if ([self respondsToSelector:@selector(headerColor)])
+                subText.text = self.headerColor;
             
             subText.textAlignment = NSTextAlignmentCenter;
             

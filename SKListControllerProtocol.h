@@ -1,13 +1,12 @@
 @protocol SKListControllerProtocol
 
--(BOOL) showHeartImage;
-
 @optional
 
 -(NSString*)plistName;
 -(NSArray*)customSpecifiers;
 -(NSString*)customTitle;
 
+-(BOOL) showHeartImage;
 -(BOOL) shiftHeartImage;
 -(NSString*) shareMessage;
 
@@ -24,4 +23,5 @@
 -(NSString*) headerText;
 -(NSString*) headerSubText;
 -(UIView*) headerView;
+-(UIColor*) headerColor;
 @end
