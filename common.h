@@ -1,5 +1,7 @@
 #import <Preferences/Preferences.h>
 
+#define SYSTEM_TINT [UIColor colorWithRed:0 green:0.478431 blue:1 alpha:1]
+
 @interface PSListController (SettingsKit)
 -(UIView*)view;
 -(UINavigationController*)navigationController;
@@ -26,4 +28,8 @@
 @end
 
 @interface UIPreferencesTable : UITableView // wat
+@end
+
+@interface UIColor (SettingsKit)
+- (BOOL)_isSimilarToColor:(UIColor *)color withinPercentage:(CGFloat)percentage;
 @end
