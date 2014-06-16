@@ -1,6 +1,7 @@
 #import <Preferences/Preferences.h>
 #import "SKSpecifierParser.h"
 #import <objc/runtime.h>
+#import "common.h"
 
 @implementation SKSpecifierParser
 +(PSCellType)PSCellTypeFromString:(NSString*)str
@@ -39,7 +40,7 @@
     return PSGroupCell;
 }
 
-+(NSArray*)specifiersFromArray:(NSArray*)array forTarget:(id)target
++(NSArray*)specifiersFromArray:(NSArray*)array forTarget:(PSListController*)target
 {
     NSMutableArray *specifiers = [NSMutableArray array];
     for (NSDictionary *dict in array)
@@ -78,7 +79,11 @@
         
         
         if (dict[@"icon"])
+        {
             [spec setupIconImageWithPath:dict[@"icon"]];
+            [spec setProperty:[UIImage imageNamed:dict[@"icon"] inBundle:[NSBundle bundleForClass:target.class]] forKey:@"iconImage"];
+        }
+        
         if (dict[@"id"])
             [spec setProperty:dict[@"id"] forKey:@"id"];
         else

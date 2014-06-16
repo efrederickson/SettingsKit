@@ -162,9 +162,9 @@
     
     if ([self respondsToSelector:@selector(headerText)])
     {
-        header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 40)];
+        header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 60)];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:header.frame];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, header.frame.size.width, header.frame.size.height - 5)];
         label.text = self.headerText;
         label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:48];
         label.backgroundColor = [UIColor clearColor];
@@ -175,7 +175,7 @@
         
         if ([self respondsToSelector:@selector(headerSubText)])
         {
-            header.frame = CGRectMake(header.frame.origin.x, header.frame.origin.y, header.frame.size.width, header.frame.size.height + 15);
+            header.frame = CGRectMake(header.frame.origin.x, header.frame.origin.y, header.frame.size.width, header.frame.size.height + 30);
             
             label.frame = CGRectMake(label.frame.origin.x, 5, label.frame.size.width, label.frame.size.height);
             [header addSubview:label];
@@ -210,7 +210,6 @@
     }
 }
 
--(NSString*) plistName { return @""; }
 -(BOOL) showHeartImage { return YES; }
 
 @end
