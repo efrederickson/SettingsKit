@@ -1,5 +1,6 @@
 #!/bin/sh
 
+mkdir $THEOS/frameworks
 cp -r .theos/obj/SettingsKit.framework $THEOS/frameworks
 
 cp *.h $THEOS/include/SettingsKit/
