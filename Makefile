@@ -15,7 +15,7 @@ SettingsKit_FILES = SKTintedControlCell.m \
 
 SettingsKit_PRIVATE_FRAMEWORKS = Preferences
 SettingsKit_INSTALL_PATH = /Library/Frameworks
-SettingsKit_FRAMEWORKS = UIKit Social
+SettingsKit_FRAMEWORKS = UIKit Social CoreGraphics
 
 include $(THEOS_MAKE_PATH)/framework.mk
 
