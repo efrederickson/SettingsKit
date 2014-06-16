@@ -255,5 +255,6 @@
 }
 
 -(BOOL) showHeartImage { return YES; }
+-(BOOL) heartImageColor { return SYSTEM_TINT; }
 
 @end
