@@ -146,7 +146,7 @@
     if ([self respondsToSelector:@selector(shareMessage)])
         [composeController setInitialText:self.shareMessage];
     else
-        [composeController setInitialText:@"Someone needs to change their [SKTintedListController sharedMessage]!"];
+        [composeController setInitialText:@"Someone needs to change their [SKTintedListController shareMessage]!"];
     
     [self presentViewController:composeController
                        animated:YES completion:nil];
