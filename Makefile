@@ -11,7 +11,8 @@ SettingsKit_FILES = SKTintedControlCell.m \
 		    SKTintedSwitchCell.m \
 		    SKTintedListController.m \
 		    SKSharedHelper.m \
-		    SKSpecifierParser.m
+		    SKSpecifierParser.m \
+		    SKPersonCell.m
 
 SettingsKit_PRIVATE_FRAMEWORKS = Preferences
 SettingsKit_INSTALL_PATH = /Library/Frameworks

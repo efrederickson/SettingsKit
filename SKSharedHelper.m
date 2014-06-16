@@ -3,7 +3,7 @@
 #import "SKSharedHelper.h"
 
 @implementation SKSharedHelper
--(void) openTwitter:(NSString*)userName
++(void) openTwitter:(NSString*)userName
 {
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tweetbot:"]])
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"tweetbot:///user_profile/" stringByAppendingString:userName]]];
@@ -17,7 +17,7 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"https://mobile.twitter.com/" stringByAppendingString:userName]]];
 }
 
-- (void)openGitHub:(NSString*)userName
++(void)openGitHub:(NSString*)userName
 {
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"ioc:"]])
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"ioc://github.com/" stringByAppendingString:userName]]];
@@ -25,7 +25,7 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"https://github.com/" stringByAppendingString:userName]]];
 }
 
--(void) openEmail:(NSString*)to subject:(NSString*)subject
++(void) openEmail:(NSString*)to subject:(NSString*)subject
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"mailto:%@?subject=%@",to,subject]]];
 }

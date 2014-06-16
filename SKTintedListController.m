@@ -255,6 +255,7 @@
 }
 
 -(BOOL) showHeartImage { return YES; }
+-(BOOL) shiftHeartImage { return YES; }
 -(UIColor*) heartImageColor
 {
     if ([self respondsToSelector:@selector(navigationTintColor)])

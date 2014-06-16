@@ -64,7 +64,11 @@
             NSString *label = dict[@"label"] == nil ? @"" : dict[@"label"];
             Class detail = dict[@"detail"] == nil ? nil : objc_getClass([dict[@"detail"] cString]);
             Class edit = dict[@"pane"] == nil ? nil : objc_getClass([dict[@"pane"] cString]);
-            spec = [PSSpecifier preferenceSpecifierNamed:label target:target set:@selector(setPreferenceValue:specifier:) get:@selector(readPreferenceValue:) detail:detail cell:cellType edit:edit];
+            SEL set = dict[@"set"] == nil ? @selector(setPreferenceValue:specifier:) : NSSelectorFromString(dict[@"set"]);
+            SEL get = dict[@"get"] == nil ? @selector(readPreferenceValue:) : NSSelectorFromString(dict[@"get"]);
+            SEL action = dict[@"action"] == nil ? nil : NSSelectorFromString(dict[@"action"]);
+            spec = [PSSpecifier preferenceSpecifierNamed:label target:target set:set get:get detail:detail cell:cellType edit:edit];
+            spec->action = action;
             for (NSString *key in dict)
             {
                 if ([key isEqual:@"cellClass"])
