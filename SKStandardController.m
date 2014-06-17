@@ -81,4 +81,12 @@
 -(void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error{
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
+-(UIColor*) iconColor
+{
+    if ([self respondsToSelector:@selector(tintColor)])
+        return self.tintColor;
+    else
+        return [UIColor whiteColor];
+}
 @end

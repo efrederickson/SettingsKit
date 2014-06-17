@@ -3,6 +3,11 @@
 #import <objc/runtime.h>
 #import "common.h"
 
+@interface PSListController (Maybe)
+-(UIColor*)iconColor;
+-(UIColor*)tintColor;
+@end
+
 @implementation SKSpecifierParser
 +(PSCellType)PSCellTypeFromString:(NSString*)str
 {
@@ -90,6 +95,12 @@
             UIImage *image = [UIImage imageNamed:dict[@"icon"] inBundle:[NSBundle bundleForClass:target.class]];
             if (image == nil)
                 image = [UIImage imageNamed:dict[@"icon"] inBundle:[NSBundle bundleForClass:self.class]];
+            
+            if ([target respondsToSelector:@selector(iconColor)])
+                image = [image changeImageColor:target.iconColor];
+            else if ([target respondsToSelector:@selector(tintColor)])
+                image = [image changeImageColor:target.tintColor];
+            
             [spec setProperty:image forKey:@"iconImage"];
         }
         

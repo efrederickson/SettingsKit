@@ -17,4 +17,6 @@
 -(void) loadSettingsListController;
 -(void) loadMakersListController;
 -(void) showSupportDialog;
+
+-(UIColor*) iconColor;
 @end
