@@ -1,15 +1,20 @@
 #import "SKStandardController.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import "common.h"
 
 @implementation SKStandardController
 -(BOOL) showHeartImage { return YES; }
 -(BOOL) tintNavigationTitleText { return NO; }
 -(BOOL) shiftHeartImage { return YES; }
+-(NSString*) enabledDescription { return @"test"; }
 
 -(NSArray*) customSpecifiers
 {
     return @[
+             @{ @"cell": @"PSGroupCell",
+                @"footerText": self.enabledDescription
+                },
              @{
                  @"cell": @"PSSwitchCell",
                  @"default": @YES,
@@ -63,7 +68,7 @@
     if ([MFMailComposeViewController canSendMail])
     {
         mailViewController = [[MFMailComposeViewController alloc] init];
-        mailViewController.delegate = nil;
+        mailViewController.mailComposeDelegate = self;
         [mailViewController setSubject:self.emailSubject];
         [mailViewController setMessageBody:self.emailBody isHTML:NO];
         [mailViewController setToRecipients:@[self.emailAddress]];
@@ -71,5 +76,9 @@
         [self.rootController presentViewController:mailViewController animated:YES completion:nil];
     }
 
+}
+
+-(void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error{
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 @end

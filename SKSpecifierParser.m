@@ -57,6 +57,9 @@
             else
                 spec = [PSSpecifier emptyGroupSpecifier];
             
+            if (dict[@"footerText"] != nil)
+                [spec setProperty:dict[@"footerText"] forKey:@"footerText"];
+            
             [spec setProperty:@"PSGroupCell" forKey:@"cell"];
         }
         else
