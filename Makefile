@@ -12,11 +12,12 @@ SettingsKit_FILES = SKTintedControlCell.m \
 		    SKTintedListController.m \
 		    SKSharedHelper.m \
 		    SKSpecifierParser.m \
-		    SKPersonCell.m
+		    SKPersonCell.m \
+		    SKStandardController.m 
 
 SettingsKit_PRIVATE_FRAMEWORKS = Preferences
 SettingsKit_INSTALL_PATH = /Library/Frameworks
-SettingsKit_FRAMEWORKS = UIKit Social CoreGraphics
+SettingsKit_FRAMEWORKS = UIKit Social CoreGraphics MessageUI QuartzCore
 
 include $(THEOS_MAKE_PATH)/framework.mk
 

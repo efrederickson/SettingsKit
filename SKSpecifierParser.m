@@ -84,8 +84,10 @@
         
         if (dict[@"icon"])
         {
-            [spec setupIconImageWithPath:dict[@"icon"]];
-            [spec setProperty:[UIImage imageNamed:dict[@"icon"] inBundle:[NSBundle bundleForClass:target.class]] forKey:@"iconImage"];
+            UIImage *image = [UIImage imageNamed:dict[@"icon"] inBundle:[NSBundle bundleForClass:target.class]];
+            if (image == nil)
+                image = [UIImage imageNamed:dict[@"icon"] inBundle:[NSBundle bundleForClass:self.class]];
+            [spec setProperty:image forKey:@"iconImage"];
         }
         
         if (dict[@"id"])
