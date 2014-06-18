@@ -43,7 +43,12 @@ Building:
  - Make sure $THEOS is set up correctly, and you have Xcode as well as the iOS 7.1 SDK.
  - Run `make` - this should build SettingsKit
  - Run `make package install THEOS_DEVICE_IP=XXX.XXX.X.XXX` to install both locally and on your device
- - Run `./install` to install locally for your other projects
+ - Run `./install` to install locally for your other projects (make sure to run `make` first!)
+
+Example steps:
+
+    make
+    ./install
  
 Local installation is important too - view or run the file "install" to see what it does. It installs the SettingsKit.framework to Theos (imporant for the NIC and other projects using SettingsKit) and installs the headers. You may need to run it as root (using `sudo ./install` or `su root -c ./install`)
 
