@@ -5,4 +5,6 @@ cp -r .theos/obj/SettingsKit.framework $THEOS/frameworks
 
 mkdir $THEOS/include/SettingsKit/
 cp *.h $THEOS/include/SettingsKit/
-
+cp *.h $THEOS/include/SettingsKit/
+mkdir $THEOS/include/SettingsKit/Resources
+cp Resources/* $THEOS/include/SettingsKit/Resources/

@@ -8,7 +8,7 @@ include $(THEOS)/makefiles/common.mk
 BUNDLE_NAME = @@PROJECTNAME@@
 @@PROJECTNAME@@_FILES = @@PROJECTNAME@@.mm
 @@PROJECTNAME@@_INSTALL_PATH = /Library/PreferenceBundles
-@@PROJECTNAME@@_FRAMEWORKS = UIKit SettingsKit
+@@PROJECTNAME@@_FRAMEWORKS = UIKit SettingsKit CoreGraphics
 @@PROJECTNAME@@_PRIVATE_FRAMEWORKS = Preferences
 
 include $(THEOS_MAKE_PATH)/bundle.mk

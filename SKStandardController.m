@@ -28,7 +28,8 @@
              @{ @"cell": @"PSGroupCell" },
              @{
                  @"cell": @"PSLinkCell",
-                 @"action": @"loadSettingsListController",
+                 //@"action": @"loadSettingsListController",
+                 @"detail": self.settingsListControllerClassName,
                  @"label": @"OPTIONS",
                  @"icon": @"settings.png",
                  @"cellClass": @"SKTintedCell",
@@ -36,7 +37,8 @@
              @{ @"cell": @"PSGroupCell" },
              @{
                  @"cell": @"PSLinkCell",
-                 @"action": @"loadMakersListController",
+                 //@"action": @"loadMakersListController",
+                 @"detail": self.makersListControllerClassName,
                  @"label": @"MAKERS",
                  @"icon": @"makers.png",
                  @"cellClass": @"SKTintedCell",
@@ -55,12 +57,15 @@
 -(NSString*)postNotification { return @""; }
 -(NSString*)defaultsFileName { return @""; }
 
--(NSString*) emailAddress { return @""; }
+-(NSArray*) emailAddresses { return @[]; }
 -(NSString*) emailBody { return @""; }
 -(NSString*) emailSubject { return @""; }
 
--(void) loadSettingsListController { }
--(void) loadMakersListController { }
+//-(void) loadSettingsListController { }
+//-(void) loadMakersListController { }
+
+-(NSString*) settingsListControllerClassName { return @""; }
+-(NSString*) makersListControllerClassName { return @""; }
 
 -(void) showSupportDialog
 {
@@ -71,7 +76,7 @@
         mailViewController.mailComposeDelegate = self;
         [mailViewController setSubject:self.emailSubject];
         [mailViewController setMessageBody:self.emailBody isHTML:NO];
-        [mailViewController setToRecipients:@[self.emailAddress]];
+        [mailViewController setToRecipients:self.emailAddresses];
             
         [self.rootController presentViewController:mailViewController animated:YES completion:nil];
     }
@@ -84,6 +89,8 @@
 
 -(UIColor*) iconColor
 {
+    if ([self respondsToSelector:@selector(navigationTintColor)])
+        return self.navigationTintColor;
     if ([self respondsToSelector:@selector(tintColor)])
         return self.tintColor;
     else

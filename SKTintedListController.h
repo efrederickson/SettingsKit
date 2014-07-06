@@ -2,5 +2,5 @@
 #import "SKListControllerProtocol.h"
 
 @interface SKTintedListController : PSListController<SKListControllerProtocol>
-
+- (id)localizedSpecifiersWithSpecifiers:(NSArray *)specifiers;
 @end

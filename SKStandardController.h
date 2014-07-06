@@ -10,13 +10,16 @@
 -(NSString*) defaultsFileName;
 -(NSString*) enabledDescription;
 
--(NSString*) emailAddress;
+-(NSArray*) emailAddresses;
 -(NSString*) emailBody;
 -(NSString*) emailSubject;
 
--(void) loadSettingsListController;
--(void) loadMakersListController;
+//-(void) loadSettingsListController;
+//-(void) loadMakersListController;
 -(void) showSupportDialog;
+
+-(NSString*) settingsListControllerClassName;
+-(NSString*) makersListControllerClassName;
 
 -(UIColor*) iconColor;
 @end
