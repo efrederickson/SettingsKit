@@ -18,13 +18,15 @@
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
             [label setFont:[UIFont fontWithName:@"Helvetica Light" size:30]];
         else
-            [label setFont:[UIFont fontWithName:@"Helvetica Light" size:21]];
+            [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:21]];
+        [label setTextColor:[UIColor colorWithRed:27/255.0f green:27/255.0f blue:27/255.0f alpha:1.0f]];
         [self addSubview:label];
         
         label2 = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x + 84, frame.origin.y + 42, frame.size.width, frame.size.height)];
         [label2 setText:self.personDescription];
         [label2 setBackgroundColor:[UIColor clearColor]];
-        [label2 setFont:[UIFont fontWithName:@"Helvetica Light" size:15]];
+        [label2 setFont:[UIFont fontWithName:@"Helvetica" size:15]];
+        [label2 setTextColor:[UIColor colorWithRed:115/255.0f green:115/255.0f blue:115/255.0f alpha:1.0f]];
         [self addSubview:label2];
     }
     return self;

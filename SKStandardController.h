@@ -21,5 +21,7 @@
 -(NSString*) settingsListControllerClassName;
 -(NSString*) makersListControllerClassName;
 
+-(NSString*) footerText;
+
 -(UIColor*) iconColor;
 @end

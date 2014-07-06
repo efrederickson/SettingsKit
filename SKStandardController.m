@@ -43,14 +43,15 @@
                  @"icon": @"makers.png",
                  @"cellClass": @"SKTintedCell",
                  },
-             @{ @"cell": @"PSGroupCell" },
+             @{ @"cell": @"PSGroupCell",
+                @"footerText": self.footerText, },
              @{
                  @"cell": @"PSLinkCell",
                  @"action": @"showSupportDialog",
                  @"label": @"SUPPORT",
                  @"icon": @"support.png",
                  @"cellClass": @"SKTintedCell",
-                 }
+                 },
              ];
 }
 
@@ -64,6 +65,8 @@
 //-(void) loadSettingsListController { }
 //-(void) loadMakersListController { }
 
+-(NSString*) footerText { return @""; }
+             
 -(NSString*) settingsListControllerClassName { return @""; }
 -(NSString*) makersListControllerClassName { return @""; }
 
