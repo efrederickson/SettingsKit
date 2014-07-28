@@ -19,7 +19,7 @@
             [label setFont:[UIFont fontWithName:@"Helvetica Light" size:30]];
         else
             [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:21]];
-        [label setTextColor:[UIColor colorWithRed:27/255.0f green:27/255.0f blue:27/255.0f alpha:1.0f]];
+        //[label setTextColor:[UIColor colorWithRed:73/255.0f green:73/255.0f blue:73/255.0f alpha:1.0f]];
         [self addSubview:label];
         
         label2 = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x + 84, frame.origin.y + 42, frame.size.width, frame.size.height)];

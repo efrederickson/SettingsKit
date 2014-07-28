@@ -167,7 +167,7 @@
     {
         header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 60)];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, header.frame.size.width, header.frame.size.height - 10)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 17, header.frame.size.width, header.frame.size.height - 10)];
         label.text = self.headerText;
         label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:48];
         label.backgroundColor = [UIColor clearColor];
@@ -180,9 +180,9 @@
         
         if ([self respondsToSelector:@selector(headerSubText)])
         {
-            header.frame = CGRectMake(header.frame.origin.x, header.frame.origin.y, header.frame.size.width, header.frame.size.height + 30);
+            header.frame = CGRectMake(header.frame.origin.x, header.frame.origin.y, header.frame.size.width, header.frame.size.height + 35);
             
-            label.frame = CGRectMake(label.frame.origin.x, 5, label.frame.size.width, label.frame.size.height - 5);
+            label.frame = CGRectMake(label.frame.origin.x, 10, label.frame.size.width, label.frame.size.height - 5);
             [header addSubview:label];
             
             UILabel *subText = [[UILabel alloc] initWithFrame:CGRectMake(header.frame.origin.x, label.frame.origin.y + label.frame.size.height, header.frame.size.width, 20)];

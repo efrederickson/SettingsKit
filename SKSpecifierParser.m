@@ -77,6 +77,12 @@
             SEL action = dict[@"action"] == nil ? nil : NSSelectorFromString(dict[@"action"]);
             spec = [PSSpecifier preferenceSpecifierNamed:label target:target set:set get:get detail:detail cell:cellType edit:edit];
             spec->action = action;
+            
+            NSArray *validTitles = dict[@"validTitles"];
+            NSArray *validValues = dict[@"validValues"];
+            if (validTitles && validValues)
+                [spec setValues:validValues titles:validTitles];
+            
             for (NSString *key in dict)
             {
                 if ([key isEqual:@"cellClass"])
@@ -84,6 +90,8 @@
                     const char *s = [dict[key] cString];
                     [spec setProperty:objc_getClass(s) forKey:key];
                 }
+                else if ([key isEqual:@"validValues"] || [key isEqual:@"validTitles"])
+                    continue;
                 else
                     [spec setProperty:dict[key] forKey:key];
             }
