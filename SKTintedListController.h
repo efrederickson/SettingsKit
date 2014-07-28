@@ -3,4 +3,5 @@
 
 @interface SKTintedListController : PSListController<SKListControllerProtocol>
 - (id)localizedSpecifiersWithSpecifiers:(NSArray *)specifiers;
+-(NSString*)localizedString:(NSString*)string;
 @end

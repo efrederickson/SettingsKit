@@ -77,8 +77,8 @@
     {
         mailViewController = [[MFMailComposeViewController alloc] init];
         mailViewController.mailComposeDelegate = self;
-        [mailViewController setSubject:self.emailSubject];
-        [mailViewController setMessageBody:self.emailBody isHTML:NO];
+        [mailViewController setSubject:LCL(self.emailSubject)];
+        [mailViewController setMessageBody:LCL(self.emailBody) isHTML:NO];
         [mailViewController setToRecipients:self.emailAddresses];
             
         [self.rootController presentViewController:mailViewController animated:YES completion:nil];

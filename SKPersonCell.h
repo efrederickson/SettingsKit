@@ -14,4 +14,5 @@
 -(NSString*)twitterHandle;
 
 -(void)updateImage;
+-(NSString*)localizedString:(NSString*)string;
 @end

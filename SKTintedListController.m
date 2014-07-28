@@ -12,7 +12,7 @@
         {
             _specifiers = [SKSpecifierParser specifiersFromArray:self.customSpecifiers forTarget:self];
             if ([self respondsToSelector:@selector(customTitle)])
-                self.title = self.customTitle;
+                self.title = LCL(self.customTitle);
         }
         else if ([self respondsToSelector:@selector(plistName)])
             _specifiers = [self loadSpecifiersFromPlistName:self.plistName target:self];
@@ -49,6 +49,11 @@
 		}
 	}
 	return specifiers;
+}
+
+-(NSString*)localizedString:(NSString*)string
+{
+    return [[self bundle] localizedStringForKey:string value:string table:nil];
 }
 
 -(void)loadView
@@ -168,7 +173,7 @@
         header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 60)];
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 17, header.frame.size.width, header.frame.size.height - 10)];
-        label.text = self.headerText;
+        label.text = LCL(self.headerText);
         label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:48];
         label.backgroundColor = [UIColor clearColor];
         if ([self respondsToSelector:@selector(tintColor)])
@@ -186,7 +191,7 @@
             [header addSubview:label];
             
             UILabel *subText = [[UILabel alloc] initWithFrame:CGRectMake(header.frame.origin.x, label.frame.origin.y + label.frame.size.height, header.frame.size.width, 20)];
-            subText.text = self.headerSubText;
+            subText.text = LCL(self.headerSubText);
             subText.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
             subText.backgroundColor = [UIColor clearColor];
             if ([self respondsToSelector:@selector(tintColor)])

@@ -1,5 +1,7 @@
 #import <Preferences/Preferences.h>
 
+#define LCL(str) [self localizedString:str]
+
 #define SYSTEM_TINT [UIColor colorWithRed:0 green:0.478431 blue:1 alpha:1]
 
 @interface PSListController (SettingsKit)
