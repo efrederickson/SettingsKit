@@ -9,6 +9,7 @@
 -(UINavigationController*)navigationController;
 -(void)viewWillAppear:(BOOL)animated;
 -(void)viewWillDisappear:(BOOL)animated;
+-(void)viewDidDisappear:(BOOL)animated;
 
 - (void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion;
 - (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion;

@@ -111,6 +111,22 @@
             
             [spec setProperty:image forKey:@"iconImage"];
         }
+        if (dict[@"leftImage"])
+        {
+            UIImage *image = [UIImage imageNamed:dict[@"leftImage"] inBundle:[NSBundle bundleForClass:target.class]];
+            if (image == nil)
+                image = [UIImage imageNamed:dict[@"leftImage"] inBundle:[NSBundle bundleForClass:self.class]];
+            
+            [spec setProperty:image forKey:@"leftImage"];
+        }
+        if (dict[@"rightImage"])
+        {
+            UIImage *image = [UIImage imageNamed:dict[@"rightImage"] inBundle:[NSBundle bundleForClass:target.class]];
+            if (image == nil)
+                image = [UIImage imageNamed:dict[@"rightImage"] inBundle:[NSBundle bundleForClass:self.class]];
+            
+            [spec setProperty:image forKey:@"rightImage"];
+        }
         
         if (dict[@"id"])
             [spec setProperty:dict[@"id"] forKey:@"id"];
