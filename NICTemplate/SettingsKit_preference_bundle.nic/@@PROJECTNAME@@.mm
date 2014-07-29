@@ -27,7 +27,7 @@
              @{
                  @"cell": @"PSSwitchCell",
                  @"default": @YES,
-                 @"defaults": @"@@PROJECTNAME@@",
+                 @"defaults": @"@@PACKAGENAME@@",
                  @"key": @"enabled",
                  @"label": @"Enabled",
                  @"PostNotification": @"@@PROJECTNAME@@/reloadSettings",
