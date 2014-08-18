@@ -53,7 +53,7 @@
 
 -(NSString*)localizedString:(NSString*)string
 {
-    return [[self bundle] localizedStringForKey:string value:string table:nil];
+    return [[self bundle] localizedStringForKey:string value:string table:nil] ?: string;
 }
 
 -(void)loadView

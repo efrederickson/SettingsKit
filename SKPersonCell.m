@@ -45,7 +45,7 @@
 
 -(NSString*)localizedString:(NSString*)string
 {
-    return [[(PSListController*)self.superview bundle] localizedStringForKey:string value:string table:nil];
+    return [[(PSListController*)self.superview bundle] localizedStringForKey:string value:string table:nil] ?: string;
 }
 
 @end
