@@ -10,12 +10,12 @@
     {
         if ([self respondsToSelector:@selector(customSpecifiers)])
         {
-            _specifiers = [SKSpecifierParser specifiersFromArray:self.customSpecifiers forTarget:self];
+            _specifiers = [[SKSpecifierParser specifiersFromArray:self.customSpecifiers forTarget:self] retain];
             if ([self respondsToSelector:@selector(customTitle)])
                 self.title = LCL(self.customTitle);
         }
         else if ([self respondsToSelector:@selector(plistName)])
-            _specifiers = [self loadSpecifiersFromPlistName:self.plistName target:self];
+            _specifiers = [[self loadSpecifiersFromPlistName:self.plistName target:self] retain];
         else
             @throw [[NSException alloc] init];
         
