@@ -4,12 +4,23 @@
 @implementation SKListItemsController
 - (void)viewWillAppear:(BOOL)animated {
     if ([self respondsToSelector:@selector(tintColor)])
+    {
         self.view.tintColor = self.tintColor;
+        [[UIApplication sharedApplication] keyWindow].tintColor = self.tintColor;
+    }
+
     if ([self respondsToSelector:@selector(navigationTintColor)])
+    {
         self.navigationController.navigationBar.tintColor = self.navigationTintColor;
+        [[UIApplication sharedApplication] keyWindow].tintColor = self.navigationTintColor;
+    }
     else
+    {
         if ([self respondsToSelector:@selector(tintColor)])
+        {
             self.navigationController.navigationBar.tintColor = self.tintColor;
+        }
+    }
     
     BOOL tintNavText = YES;
     if ([self respondsToSelector:@selector(tintNavigationTitleText)])
@@ -30,6 +41,8 @@
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
     
+
+    [[UIApplication sharedApplication] keyWindow].tintColor = nil;
     self.view.tintColor = nil;
     self.navigationController.navigationBar.tintColor = nil;
     self.navigationController.navigationBar.titleTextAttributes = @{};
