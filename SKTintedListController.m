@@ -4,6 +4,10 @@
 #import "common.h"
 #import "SKSpecifierParser.h"
 
+@interface PSListController (did_rotate_from_orientation_settingskit)
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation;
+@end
+
 @implementation SKTintedListController
 - (id)specifiers {
 	if(_specifiers == nil)
@@ -226,6 +230,10 @@
     if (header)
     {
         header.backgroundColor = [UIColor clearColor];
+
+	    header.autoresizesSubviews = YES;
+	    header.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+
         [self.table setTableHeaderView:header];
     }
 }
@@ -242,4 +250,9 @@
         return SYSTEM_TINT;
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+	[super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+	[self setupHeader];
+}
 @end
