@@ -83,8 +83,6 @@
             ((UINavigationItem*)self.navigationItem).rightBarButtonItem = heartButton;
     }
     
-    [self setupHeader];
-    
     BOOL tintSwitches_ = YES;
     
     if ([self respondsToSelector:@selector(tintSwitches)])
@@ -122,6 +120,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
+    [self setupHeader];
     
     if ([self respondsToSelector:@selector(tintColor)])
     {
@@ -149,7 +149,6 @@
             if ([self respondsToSelector:@selector(tintColor)])
                 self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: self.tintColor };
     }
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -171,6 +170,7 @@
         
         UIImage *headerImage = [UIImage imageNamed:self.headerImage inBundle:[NSBundle bundleForClass:self.class]];
         UIImageView *imageView = [[UIImageView alloc] initWithImage:headerImage];
+        header.frame = (CGRect){ header.frame.origin, headerImage.size };
         imageView.frame = CGRectMake(imageView.frame.origin.x, 10, imageView.frame.size.width, headerImage.size.height);
         
         [header addSubview:imageView];
@@ -178,7 +178,7 @@
     
     if ([self respondsToSelector:@selector(headerText)])
     {
-        header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 60)];
+        header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, /*UIScreen.mainScreen.bounds.size.width*/self.view.frame.size.width, 60)];
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 17, header.frame.size.width, header.frame.size.height - 10)];
         label.text = LCL(self.headerText);
