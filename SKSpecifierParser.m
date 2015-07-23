@@ -100,7 +100,27 @@
         
         if (dict[@"icon"])
         {
-            UIImage *image = [UIImage imageNamed:dict[@"icon"] inBundle:[NSBundle bundleForClass:target.class]];
+            /*id value = dict[@"icon"];
+            UIImage *image = nil;
+            if ([value isKindOfClass:[UIImage class]] == NO)
+            {
+                UIImage *image = [UIImage imageNamed:value inBundle:[NSBundle bundleForClass:target.class]];
+                if (image == nil)
+                    image = [UIImage imageNamed:value inBundle:[NSBundle bundleForClass:self.class]];
+            }
+            else
+                image = value;
+
+            if ([target respondsToSelector:@selector(iconColor)])
+                image = [image changeImageColor:target.iconColor];
+            else if ([target respondsToSelector:@selector(tintColor)])
+                image = [image changeImageColor:target.tintColor]; 
+
+            [spec setProperty:image forKey:@"iconImage"];*/
+
+            UIImage *image = [dict[@"icon"] isKindOfClass:[UIImage class]] ? dict[@"icon"] : nil;
+            if (image == nil)
+                image = [UIImage imageNamed:dict[@"icon"] inBundle:[NSBundle bundleForClass:target.class]];
             if (image == nil)
                 image = [UIImage imageNamed:dict[@"icon"] inBundle:[NSBundle bundleForClass:self.class]];
             

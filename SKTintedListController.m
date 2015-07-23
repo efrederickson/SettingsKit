@@ -226,14 +226,15 @@
     {
         header = self.headerView;
     }
-    
-    if (header)
+    else if (header)
     {
         header.backgroundColor = [UIColor clearColor];
+        header.autoresizesSubviews = YES;
+        header.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    }
 
-	    header.autoresizesSubviews = YES;
-	    header.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-
+    if (header)
+    {
         [self.table setTableHeaderView:header];
     }
 }
