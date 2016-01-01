@@ -16,7 +16,7 @@
         {
             _specifiers = [SKSpecifierParser specifiersFromArray:self.customSpecifiers forTarget:self];
             if ([self respondsToSelector:@selector(customTitle)])
-                self.title = LCL(self.customTitle);
+                self.title = SK_LCL(self.customTitle);
         }
         else if ([self respondsToSelector:@selector(plistName)])
             _specifiers = [self loadSpecifiersFromPlistName:self.plistName target:self];
@@ -95,16 +95,38 @@
     if (tintSwitches_)
     {
         if ([self respondsToSelector:@selector(switchOnTintColor)])
-            [UISwitch appearanceWhenContainedIn:self.class, nil].onTintColor = self.switchOnTintColor;
+        {
+            if (SK_SYSTEM_VERSION_LESS_THAN(@"9.0"))
+                ((UISwitch*)[UISwitch performSelector:@selector(appearanceWhenContainedIn:) withObject:self.class]).onTintColor = self.switchOnTintColor;
+            else
+                [UISwitch appearanceWhenContainedInInstancesOfClasses:@[self.class]].onTintColor = self.switchOnTintColor;
+        }
         else
+        {
             if ([self respondsToSelector:@selector(tintColor)])
-                [UISwitch appearanceWhenContainedIn:self.class, nil].onTintColor = self.tintColor;
+            {
+                if (SK_SYSTEM_VERSION_LESS_THAN(@"9.0"))
+                    ((UISwitch*)[UISwitch performSelector:@selector(appearanceWhenContainedIn:) withObject:self.class]).onTintColor = self.tintColor;
+                else
+                    [UISwitch appearanceWhenContainedInInstancesOfClasses:@[self.class]].onTintColor = self.tintColor;
+            }
+        }
     
         if ([self respondsToSelector:@selector(switchTintColor)])
-            [UISwitch appearanceWhenContainedIn:self.class, nil].tintColor = self.switchTintColor;
+        {
+                if (SK_SYSTEM_VERSION_LESS_THAN(@"9.0"))
+                    ((UISwitch*)[UISwitch performSelector:@selector(appearanceWhenContainedIn:) withObject:self.class]).onTintColor = self.switchTintColor;
+                else
+                    [UISwitch appearanceWhenContainedInInstancesOfClasses:@[self.class]].onTintColor = self.switchTintColor;
+        }
         else
             if ([self respondsToSelector:@selector(tintColor)])
-                [UISwitch appearanceWhenContainedIn:self.class, nil].tintColor = self.tintColor;
+            {
+                if (SK_SYSTEM_VERSION_LESS_THAN(@"9.0"))
+                    ((UISwitch*)[UISwitch performSelector:@selector(appearanceWhenContainedIn:) withObject:self.class]).onTintColor = self.tintColor;
+                else
+                    [UISwitch appearanceWhenContainedInInstancesOfClasses:@[self.class]].onTintColor = self.tintColor;
+            }
     }
 }
 
@@ -185,7 +207,7 @@
         header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, /*UIScreen.mainScreen.bounds.size.width*/self.view.frame.size.width, 60)];
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 17, header.frame.size.width, header.frame.size.height - 10)];
-        label.text = LCL(self.headerText);
+        label.text = SK_LCL(self.headerText);
         label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:48];
         label.backgroundColor = [UIColor clearColor];
         if ([self respondsToSelector:@selector(tintColor)])
@@ -203,7 +225,7 @@
             [header addSubview:label];
             
             UILabel *subText = [[UILabel alloc] initWithFrame:CGRectMake(header.frame.origin.x, label.frame.origin.y + label.frame.size.height, header.frame.size.width, 20)];
-            subText.text = LCL(self.headerSubText);
+            subText.text = SK_LCL(self.headerSubText);
             subText.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
             subText.backgroundColor = [UIColor clearColor];
             if ([self respondsToSelector:@selector(tintColor)])
@@ -248,7 +270,7 @@
     else if ([self respondsToSelector:@selector(tintColor)])
         return self.tintColor;
     else
-        return SYSTEM_TINT;
+        return SK_SYSTEM_TINT;
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation

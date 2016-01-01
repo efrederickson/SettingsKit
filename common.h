@@ -1,8 +1,16 @@
 #import <Preferences/Preferences.h>
 
-#define LCL(str) [self localizedString:str]
+#define SK_LCL(str) [self localizedString:str]
 
-#define SYSTEM_TINT [UIColor colorWithRed:0 green:0.478431 blue:1 alpha:1]
+#define SK_SYSTEM_TINT [UIColor colorWithRed:0 green:0.478431 blue:1 alpha:1]
+
+#define SK_RSIMG(fn) [UIImage imageNamed:fn inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil]
+
+#define SK_SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SK_SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SK_SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SK_SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SK_SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
 @interface PSListController (SettingsKit)
 -(UIView*)view;
