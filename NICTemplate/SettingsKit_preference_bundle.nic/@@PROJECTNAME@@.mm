@@ -1,3 +1,11 @@
+//
+//  @@PROJECTNAME@@ListController.m
+//  @@FULLPROJECTNAME@@
+//
+//  Created by @@USER@@ on @@DATE@@.
+//  Copyright (c) @@YEAR@@ @@USER@@. All rights reserved.
+//
+
 #import <Preferences/Preferences.h>
 #import <SettingsKit/SKListControllerProtocol.h>
 #import <SettingsKit/SKTintedListController.h>
