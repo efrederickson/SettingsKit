@@ -21,7 +21,7 @@
 	<key>DTPlatformName</key>
 	<string>iphoneos</string>
 	<key>MinimumOSVersion</key>
-	<string>3.0</string>
+	<string>@@DEPLOYMENT_TARGET@@</string>
 	<key>NSPrincipalClass</key>
 	<string>@@PROJECTNAME@@ListController</string>
 </dict>

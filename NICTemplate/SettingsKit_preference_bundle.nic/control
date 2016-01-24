@@ -1,0 +1,8 @@
+Package: @@PACKAGENAME@@
+Name: @@FULLPROJECTNAME@@
+Depends: preferenceloader, firmware (>= @@DEPLOYMENT_TARGET@@)
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome preference bundle by SettingsKit!
+Author: @@USER@@
+Section: Tweaks

@@ -1,5 +1,5 @@
 ARCHS = armv7 armv7s arm64
-TARGET = iPhone:clang:latest:latest
+TARGET = iPhone:clang:latest:@@DEPLOYMENT_TARGET@@
 CFLAGS = -fobjc-arc
 LDFLAGS = -F$(THEOS)/frameworks
 
@@ -8,6 +8,7 @@ include $(THEOS)/makefiles/common.mk
 BUNDLE_NAME = @@PROJECTNAME@@
 @@PROJECTNAME@@_FILES = @@PROJECTNAME@@.mm $(shell find $(THEOS)/include/SettingsKit -name '*.m')
 @@PROJECTNAME@@_INSTALL_PATH = /Library/PreferenceBundles
+@@PROJECTNAME@@_CFLAGS = @@CFLAGS@@
 @@PROJECTNAME@@_FRAMEWORKS = UIKit MessageUI Social QuartzCore CoreGraphics
 @@PROJECTNAME@@_PRIVATE_FRAMEWORKS = Preferences
 
