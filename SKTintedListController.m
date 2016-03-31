@@ -97,7 +97,7 @@
         if ([self respondsToSelector:@selector(switchOnTintColor)])
         {
             if (SK_SYSTEM_VERSION_LESS_THAN(@"9.0"))
-                ((UISwitch*)[UISwitch performSelector:@selector(appearanceWhenContainedIn:) withObject:self.class]).onTintColor = self.switchOnTintColor;
+                [UISwitch appearanceWhenContainedIn:self.class,nil].onTintColor = self.switchOnTintColor;
             else
                 [UISwitch appearanceWhenContainedInInstancesOfClasses:@[self.class]].onTintColor = self.switchOnTintColor;
         }
@@ -106,7 +106,7 @@
             if ([self respondsToSelector:@selector(tintColor)])
             {
                 if (SK_SYSTEM_VERSION_LESS_THAN(@"9.0"))
-                    ((UISwitch*)[UISwitch performSelector:@selector(appearanceWhenContainedIn:) withObject:self.class]).onTintColor = self.tintColor;
+                    [UISwitch appearanceWhenContainedIn:self.class,nil].onTintColor = self.tintColor;
                 else
                     [UISwitch appearanceWhenContainedInInstancesOfClasses:@[self.class]].onTintColor = self.tintColor;
             }
@@ -115,7 +115,7 @@
         if ([self respondsToSelector:@selector(switchTintColor)])
         {
                 if (SK_SYSTEM_VERSION_LESS_THAN(@"9.0"))
-                    ((UISwitch*)[UISwitch performSelector:@selector(appearanceWhenContainedIn:) withObject:self.class]).onTintColor = self.switchTintColor;
+                    [UISwitch appearanceWhenContainedIn:self.class,nil].onTintColor = self.switchTintColor;
                 else
                     [UISwitch appearanceWhenContainedInInstancesOfClasses:@[self.class]].onTintColor = self.switchTintColor;
         }
@@ -123,7 +123,7 @@
             if ([self respondsToSelector:@selector(tintColor)])
             {
                 if (SK_SYSTEM_VERSION_LESS_THAN(@"9.0"))
-                    ((UISwitch*)[UISwitch performSelector:@selector(appearanceWhenContainedIn:) withObject:self.class]).onTintColor = self.tintColor;
+                    [UISwitch appearanceWhenContainedIn:self.class,nil].onTintColor = self.tintColor;
                 else
                     [UISwitch appearanceWhenContainedInInstancesOfClasses:@[self.class]].onTintColor = self.tintColor;
             }
